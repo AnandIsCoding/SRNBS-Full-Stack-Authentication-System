@@ -5,7 +5,7 @@ import { resend } from "../utils/resend.js";
 export const sendVerificationEmail = async (email, verificationToken) => {
   try {
     const { error } = await resend.emails.send({
-from: "SRNBS Foundation <onboarding@resend.dev>",
+from:  "SRNBS Foundation <onboarding@devlinked.site>",
       to: email,
       subject: "Verify your email address",
       html: `
@@ -85,7 +85,7 @@ from: "SRNBS Foundation <onboarding@resend.dev>",
 export const sendWelcomeEmail = async (email, username) => {
   try {
     const { error } = await resend.emails.send({
-      from: "SRNBS Foundation <onboarding@resend.dev>",
+      from:  "SRNBS Foundation <onboarding@devlinked.site>",
       to: email,
       subject: "Welcome to SRNBS Foundation 🎉",
       html: `
@@ -163,7 +163,7 @@ export const sendWelcomeEmail = async (email, username) => {
 export const sendPasswordResetEmail = async (email, resetPasswordUrl) => {
   try {
     const { error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>", 
+      from:  "SRNBS Foundation <onboarding@devlinked.site>", 
       to: email,
       subject: "Reset Your Password – SRNBS Foundation",
       html: `
@@ -282,7 +282,7 @@ export const sendPasswordResetEmail = async (email, resetPasswordUrl) => {
 export const sendPasswordResetSuccessEmail = async (email) => {
   try {
     const { error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>", // works without domain verification
+      from: "SRNBS Foundation <onboarding@devlinked.site>", // works without domain verification
       to: email,
       subject: "✅ Your Password Has Been Reset Successfully",
       html: `
