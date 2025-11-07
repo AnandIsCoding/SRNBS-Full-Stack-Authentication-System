@@ -8,7 +8,7 @@ This is a **full-stack authentication system** built using the MERN (MongoDB, Ex
 ![Landing Page](./client/public/Landing.png)
 ![Login / Signup Page](./client/public/login-signup.png)
 ![Forgot Password Page](./client/public/ForgotPassword.png)
-![Reset Password Page](./client/public/Resetpassword.png)
+![Reset Password Page](./client/public/ResetPassword.png)
 ![Dashboard Page](./client/public/Dashboard.png)
 
 
