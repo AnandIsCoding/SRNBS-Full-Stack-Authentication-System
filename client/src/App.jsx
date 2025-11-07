@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
 import VerifyOtp from "./pages/VerifyOtp";
@@ -17,7 +17,8 @@ function App() {
     setUser,
     setAuthenticated,
     setIsFetching,
-    isAuthenticated
+    isAuthenticated,
+    isFetching
   } = useAuthStore();
 
   useEffect(() => {
@@ -44,33 +45,44 @@ function App() {
       }
     };
 
-    fetchProfile(); // ✅ run on app mount
+    fetchProfile(); // run on app mount
   }, []);
 
+  // Show loading while checking authentication
+  if (isFetching) {
+    return (
+      <div className="flex items-center justify-center h-screen text-xl">
+        Checking authentication…
+      </div>
+    );
+  }
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Landing />} />
- {/* Auth route - redirect if already authenticated */}
+    <Routes>
+      <Route path="/" element={<Landing />} />
+
+      {/* Auth route - redirect if already authenticated */}
       <Route
         path="/auth"
-        element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Auth />}
+        element={
+          isAuthenticated ? <Navigate to="/dashboard" replace /> : <Auth />
+        }
       />
-        <Route path="/verify-otp" element={<VerifyOtp />} />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+      <Route path="/verify-otp" element={<VerifyOtp />} />
 
-        <Route path="/forgot-password" element={<ForgotPassword/>} />
-        <Route path="/reset-password/:token" element={<ResetPassword/>} />
-      </Routes>
-    </>
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password/:token" element={<ResetPassword />} />
+    </Routes>
   );
 }
 
