@@ -10,13 +10,13 @@ export const generateJWTToken = (res, userId, userEmail) => {
       JWTSECRET,
       { expiresIn: "7d" }
     );
-
-     res.cookie("token", token, {
+    res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // must be HTTPS
-      sameSite: "none", // cross-site cookies
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
+
 
     return token;
 

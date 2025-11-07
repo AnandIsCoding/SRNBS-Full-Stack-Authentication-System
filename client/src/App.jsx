@@ -28,7 +28,7 @@ function App() {
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_SERVER_URL}/profile`
-        );
+        ,{ withCredentials: true });
 
         if (res.data?.success) {
           setUser(res.data.user);
