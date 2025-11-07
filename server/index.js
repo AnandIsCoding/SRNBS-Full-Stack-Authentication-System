@@ -24,7 +24,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
   "http://localhost:7000",
-  "https://srnbsauth.vercel.app"
+  "https://srnbsauth.vercel.app",
+  "https://srnbs-full-stack-authentication-sys.vercel.app"
 ];
 
 const corsOptions = {
