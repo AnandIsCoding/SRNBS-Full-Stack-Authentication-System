@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import axios from "axios";
 import { TimerReset } from "lucide-react";
+import React, { useRef,useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 export default function VerifyOtp() {
   const navigate = useNavigate();

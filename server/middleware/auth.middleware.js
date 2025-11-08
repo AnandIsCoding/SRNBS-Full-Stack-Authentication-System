@@ -1,8 +1,9 @@
 import chalk from "chalk";
-import jwt from "jsonwebtoken";
-import User from "../models/user.model.js";
-import { JWTSECRET } from "../configs/server.config.js";
 import { StatusCodes } from "http-status-codes";
+import jwt from "jsonwebtoken";
+
+import { JWTSECRET } from "../configs/server.config.js";
+import User from "../models/user.model.js";
 
 export const isAuthenticated = async (req, res, next) => {
   try {

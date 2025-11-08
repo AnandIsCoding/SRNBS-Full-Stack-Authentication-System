@@ -1,5 +1,6 @@
 import express from 'express'
-import { login, logout, signupUser, verifyEmailOTP, getMyProfile, forgotPassword, resetPassword, registerWithGoogleController } from '../controllers/auth.controller.js';
+
+import { forgotPassword, getMyProfile, login, logout, registerWithGoogleController,resetPassword, signupUser, verifyEmailOTP } from '../controllers/auth.controller.js';
 import {  isAuthenticated } from '../middleware/auth.middleware.js';
 
 const authRouter = express.Router();

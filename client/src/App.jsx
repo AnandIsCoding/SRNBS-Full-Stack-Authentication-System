@@ -1,14 +1,15 @@
-import { useEffect } from "react";
 import axios from "axios";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Auth from "./pages/Auth";
-import VerifyOtp from "./pages/VerifyOtp";
-import Dashboard from "./pages/Dashboard";
+import { useEffect } from "react";
+import { Navigate,Route, Routes } from "react-router-dom";
+
 import ProtectedRoute from "./components/ProtectedRoute";
-import { useAuthStore } from "./store/authStore";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
+import Landing from "./pages/Landing";
 import ResetPassword from "./pages/ResetPassword";
+import VerifyOtp from "./pages/VerifyOtp";
+import { useAuthStore } from "./store/authStore";
 
 axios.defaults.withCredentials = true;
 

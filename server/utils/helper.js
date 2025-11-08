@@ -1,5 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import jwt from 'jsonwebtoken';
+
 import { JWTSECRET } from '../configs/server.config.js';
 
 // ✅ Generate JWT token & store in cookie

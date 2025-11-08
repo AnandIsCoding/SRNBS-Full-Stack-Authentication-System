@@ -1,7 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Lock, CheckCircle, ArrowRight } from "lucide-react";
+import { ArrowRight,CheckCircle, Lock } from "lucide-react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+
 import { useAuthStore } from "../store/authStore";
 
 export default function LandingPage() {

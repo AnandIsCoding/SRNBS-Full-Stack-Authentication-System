@@ -3,9 +3,9 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import { StatusCodes } from "http-status-codes";
-import { PORT } from "./configs/server.config.js";
 
 import connectToDb from "./configs/database.config.js";
+import { PORT } from "./configs/server.config.js";
 import authRouter from "./routes/auth.route.js";
 
 const app = express();

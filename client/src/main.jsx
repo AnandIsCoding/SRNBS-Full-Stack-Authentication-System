@@ -1,10 +1,12 @@
+import './index.css'
+
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css'
-import App from './App.jsx'
 import toast, { Toaster } from 'react-hot-toast';
-import { GoogleOAuthProvider } from "@react-oauth/google";
+import { BrowserRouter, Route,Routes } from "react-router-dom";
+
+import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

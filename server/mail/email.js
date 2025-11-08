@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import { StatusCodes } from "http-status-codes";
+
 import { resend } from "../utils/resend.js";
 
 export const sendVerificationEmail = async (email, verificationToken) => {

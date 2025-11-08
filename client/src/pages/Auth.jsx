@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import axios from "axios";
 import { Eye, EyeOff } from "lucide-react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
-import { useAuthStore } from "../store/authStore";
 import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
+
 import GoogleLoginComponent from "../components/GoogleLoginComponent";
+import { useAuthStore } from "../store/authStore";
 
 axios.defaults.withCredentials = true; // ✅ Always send cookies
 

@@ -1,9 +1,10 @@
+import axios from 'axios'
 import React from "react";
-import { useAuthStore } from "../store/authStore";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from 'axios'
+
+import { useAuthStore } from "../store/authStore";
 
 export default function Dashboard() {
   const { logout } = useAuthStore();

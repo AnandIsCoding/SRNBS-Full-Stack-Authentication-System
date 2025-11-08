@@ -1,14 +1,13 @@
-import StatusCodes from 'http-status-codes';
-import User from '../models/user.model.js';
 import bcrypt from "bcryptjs";
-import { generateJWTToken } from '../utils/helper.js';
 import chalk from 'chalk';
 import crypto from 'crypto'
-import { sendPasswordResetEmail, sendPasswordResetSuccessEmail, sendVerificationEmail, sendWelcomeEmail } from '../mail/email.js';
+import { OAuth2Client } from "google-auth-library";
+import StatusCodes from 'http-status-codes';
 
 import { CLIENT_URL } from '../configs/server.config.js';
-
-import { OAuth2Client } from "google-auth-library";
+import { sendPasswordResetEmail, sendPasswordResetSuccessEmail, sendVerificationEmail, sendWelcomeEmail } from '../mail/email.js';
+import User from '../models/user.model.js';
+import { generateJWTToken } from '../utils/helper.js';
 const client = new OAuth2Client(process.env.CLIENT_ID);
 //  signup handler controller
 
