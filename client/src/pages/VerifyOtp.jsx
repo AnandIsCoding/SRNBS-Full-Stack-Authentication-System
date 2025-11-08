@@ -9,6 +9,7 @@ export default function VerifyOtp() {
 
   const [otp, setOtp] = useState(Array(6).fill(""));
   const [loading, setLoading] = useState(false);
+   const { setUser, setAuthenticated } = useAuthStore();
   const inputsRef = useRef([]);
 
   const handleChange = (value, index) => {
@@ -48,6 +49,8 @@ export default function VerifyOtp() {
         { code: finalOtp },
         { withCredentials: true }
       );
+      setUser(res.data.user);
+      setAuthenticated(true);
       if(res.data.success){
          navigate('/dashboard')
       }

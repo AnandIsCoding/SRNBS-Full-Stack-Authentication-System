@@ -24,14 +24,14 @@ export default function Auth() {
 
   const navigate = useNavigate();
 
-  // ✅ Zustand store methods
+  // Zustand store methods
   const { setUser, setAuthenticated } = useAuthStore();
 
-  // ✅ Input Handler
+  // Input Handler
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // ✅ Google OAuth Placeholder
+  // Google OAuth Placeholder
   const handleGoogleAuth = () => {
     toast.success("Google Authentication coming soon!");
   };
