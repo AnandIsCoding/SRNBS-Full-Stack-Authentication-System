@@ -52,7 +52,9 @@ from:  "SRNBS Foundation <onboarding@devlinked.site>",
 
   <p style="font-size: 13px; color: #666; text-align:center;">
     This OTP is valid for <strong>1 Hour</strong>.  
-    Do not share it with anyone.
+    Do not share it with anyone.<br/>
+    check your spam folder if you don't see it in your inbox.<br />
+    If you did not request this, please ignore this email.
   </p>
 
   <hr style="border:none; border-top:1px solid #eee; margin:20px 0;" />
@@ -121,7 +123,9 @@ export const sendWelcomeEmail = async (email, username) => {
     line-height: 1.6;
   ">
     Your account has been successfully created.<br />
-    You now have full access to your dashboard, resources, and updates.
+    You now have full access to your dashboard, resources, and updates.<br/>
+    check your spam folder if you don't see it in your inbox.<br />
+    If you did not request this, please ignore this email.
   </p>
 
   <div style="
@@ -239,7 +243,9 @@ export const sendPasswordResetEmail = async (email, resetPasswordUrl) => {
     margin-top: 10px;
   ">
     This link is valid for <strong>1 hour</strong>.<br>
-    If you didn’t request this, you can safely ignore this email.
+    If you didn’t request this, you can safely ignore this email.<br/>
+    check your spam folder if you don't see it in your inbox.<br />
+    If you did not request this, please ignore this email.
   </p>
 
   <hr style="
@@ -325,7 +331,9 @@ export const sendPasswordResetSuccessEmail = async (email) => {
   </div>
 
   <p style="font-size: 13px; color: #666; text-align:center;">
-    For security reasons, we recommend keeping your account info confidential.
+    For security reasons, we recommend keeping your account info confidential.<br/>
+    check your spam folder if you don't see it in your inbox.<br />
+    If you did not request this, please ignore this email.
   </p>
 
   <hr style="border:none; border-top:1px solid #eee; margin:20px 0;" />
