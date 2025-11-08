@@ -48,10 +48,12 @@ export default function VerifyOtp() {
         { code: finalOtp },
         { withCredentials: true }
       );
+      if(res.data.success){
+         navigate('/dashboard')
+      }
 
       toast.success(res.data.message || "OTP Verified Successfully!");
       setTimeout(() => navigate("/dashboard"), 800);
-      navigate('/dashboard')
     } catch (error) {
       toast.error(
         error.response?.data?.message || "Verification failed. Try again."
