@@ -51,6 +51,7 @@ export default function VerifyOtp() {
 
       toast.success(res.data.message || "OTP Verified Successfully!");
       setTimeout(() => navigate("/dashboard"), 800);
+      navigate('/dashboard')
     } catch (error) {
       toast.error(
         error.response?.data?.message || "Verification failed. Try again."
@@ -74,7 +75,7 @@ export default function VerifyOtp() {
 
         <h1 className="text-3xl font-bold mb-2">Verify OTP</h1>
         <p className="text-gray-500 mb-6">
-          Enter the 6-digit OTP sent to your email
+          Enter the 6-digit OTP sent to your email, please check your spam folder if you don't see it in your inbox.
         </p>
 
         {/* OTP Inputs */}
