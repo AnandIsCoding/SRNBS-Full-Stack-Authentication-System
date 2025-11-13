@@ -31,10 +31,11 @@ export default function Auth() {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // Google OAuth Placeholder
-  const handleGoogleAuth = () => {
-    toast.success("Google Authentication coming soon!");
-  };
+  // Google OAuth Placeholder : Todo check later
+  // const handleGoogleAuth = () => {
+
+  //   toast.success("Google Authentication coming soon!");
+  // };
 
 //  handle signup
   const handleSignup = async () => {

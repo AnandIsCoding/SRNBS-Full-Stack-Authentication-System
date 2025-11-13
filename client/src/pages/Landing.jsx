@@ -18,7 +18,6 @@ export default function LandingPage() {
       className="w-full py-34 bg-white"
     >
       <div className="max-w-4xl mx-auto text-center px-6">
-
         {/* Icon */}
         <motion.div
           initial={{ scale: 0.7, opacity: 0 }}

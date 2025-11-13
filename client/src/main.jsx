@@ -3,7 +3,7 @@ import './index.css'
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { BrowserRouter, Route,Routes } from "react-router-dom";
 
 import App from './App.jsx'

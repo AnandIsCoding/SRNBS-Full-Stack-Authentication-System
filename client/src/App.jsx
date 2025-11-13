@@ -38,7 +38,8 @@ function App() {
           setUser(null);
           setAuthenticated(false);
         }
-      } catch (err) {
+      } catch (error) {
+        console.log('Error --> ',error)
         setUser(null);
         setAuthenticated(false);
       } finally {
@@ -46,8 +47,8 @@ function App() {
       }
     };
 
-    fetchProfile(); // run on app mount
-  }, []);
+    fetchProfile(); 
+  }, [setAuthenticated, setIsFetching, setUser]);
 
   // Show loading while checking authentication
   if (isFetching) {

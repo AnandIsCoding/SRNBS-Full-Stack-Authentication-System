@@ -8,43 +8,37 @@ import { useAuthStore } from "../store/authStore";
 
 export default function Dashboard() {
   const { logout } = useAuthStore();
-   const navigate = useNavigate()
- const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const navigate = useNavigate();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const { setUser, setAuthenticated } = useAuthStore();
 
-const handleLogout = async () => {
-  try {
-    setIsLoggingOut(true);
+  const handleLogout = async () => {
+    try {
+      setIsLoggingOut(true);
+      // Call backend to delete session/cookie
+      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/logout`, {
+        withCredentials: true,
+      });
 
-    // Call backend to delete session/cookie
-    await axios.delete(`${import.meta.env.VITE_SERVER_URL}/logout`, {
-      withCredentials: true,
-    });
+      // Update auth store
+      setUser(null);
+      setAuthenticated(false);
 
-    // Update auth store
-    setUser(null);
-    setAuthenticated(false);
-
-    toast.success("Logged out successfully!");
-    navigate("/"); // ✅ Now redirect works
-  } catch (error) {
-    console.log("Logout Error:", error);
-    toast.error(error.response?.data?.message || "Logout failed");
-  } finally {
-    setIsLoggingOut(false);
-  }
-};
-
+      toast.success("Logged out successfully!");
+      navigate("/"); // ✅ Now redirect works
+    } catch (error) {
+      console.log("Logout Error:", error);
+      toast.error(error.response?.data?.message || "Logout failed");
+    } finally {
+      setIsLoggingOut(false);
+    }
+  };
 
   return (
     <div className="flex h-screen bg-pink-50">
 
       <div className="flex-1 flex flex-col">
-
-       
-
         <main className="p-6 overflow-auto">
-
           <h2 className="text-2xl font-bold mb-6 text-pink-600">👋👋 Anand's Dashboard</h2>
 
           {/* CARDS */}
@@ -95,17 +89,17 @@ const handleLogout = async () => {
 
       {/* LOGOUT BUTTON */}
       <button
-  onClick={handleLogout}
-  className="
+        onClick={handleLogout}
+        className="
     bg-pink-600 text-white px-7 py-3 rounded-md shadow-md 
     hover:bg-pink-700 transition cursor-pointer
 
     fixed right-5 bottom-5   /* mobile default */
     md:top-5 md:bottom-auto  /* desktop top-right */
   "
->
-  Logout
-</button>
+      >
+        Logout
+      </button>
 
 
     </div>
